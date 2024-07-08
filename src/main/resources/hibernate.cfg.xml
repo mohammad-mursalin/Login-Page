@@ -18,8 +18,8 @@
         <property name="hibernate.show_sql">true</property>
 
         <property name="hibernate.mapping.resource.source">annotation</property>
-        <property name="hibernate.package_to_scan">com.entities</property>
-        <mapping class="com.entities.NoteTaker"/>
+        <property name="hibernate.package_to_scan">com</property>
+        <mapping class="com.AllAccounts"/>
 
 
         <!--<property name="hibernate.cache.use_second_level_cache">true</property>

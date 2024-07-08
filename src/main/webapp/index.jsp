@@ -1,8 +1,19 @@
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>Form page : Home page</title>
+
+</head>
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form action = "createAccount.jsp" method = "post">
                 <h1>Create Account</h1>
 
                 <div class="social-icons">
@@ -12,9 +23,9 @@
                 <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registration</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input name = "name" type="text" placeholder="Name">
+                <input name = "email" type="email" placeholder="Email">
+                <input name = "password" type="password" placeholder="Password">
                 <button>Sign Up</button>
             </form>
         </div>
@@ -52,6 +63,6 @@
     </div>
 
 
-    <script src="login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
