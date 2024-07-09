@@ -11,7 +11,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <title>Check Account</title>
 </head>
 <body>
 
@@ -21,50 +21,35 @@
 
         AllAccounts account = null;
 
-        String message;
-        String name;
-
-        try{
-
+        try {
             Session hSession = FactoryProvider.getFactory().openSession();
-
             Transaction tr = hSession.beginTransaction();
 
             Query q = hSession.createQuery("from AllAccounts where email = :email");
-            q.setParameter("email",email);
+            q.setParameter("email", email);
 
-            account = q.uniqueResult();
-
-                if(email.equals(account.getEmail())) {
-
-                    if(password.equals(account.getPassword())) {
-
-                        response.setAttribute(account.getName());
-                        response.sendRedirect("welcome.jsp");
-
-                    }
-                    else {
-
-                        response.sendRedirect("retry.jsp");
-                    }
-                }
-                else {
-
-                    response.sendRedirect("noAccount.jsp");
-                }
-
+            account = (AllAccounts) q.uniqueResult();
             tr.commit();
-
             hSession.close();
 
-        }
-        catch(Exception e) {
+            if (account != null && email.equals(account.getEmail())) {
+                if (password.equals(account.getPassword())) {
+                    session.setAttribute("name", account.getName());
+                    response.sendRedirect("welcome.jsp");
+                } else {
+                    response.sendRedirect("retry.jsp");
+                }
+            } else {
+                request.setAttribute("email", email);
+                RequestDispatcher rd = request.getRequestDispatcher("noAccount.jsp");
+                rd.forward(request, response);
+            }
 
+        } catch (Exception e) {
             e.printStackTrace();
-
         }
     %>
-<h1> Check Account page</h1>
+    <h1>Check Account page</h1>
 
 </body>
 </html>
