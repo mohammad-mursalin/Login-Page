@@ -1,15 +1,24 @@
 package com;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class AllAccounts {
 
     private String name;
     @Id
     private String email;
     private String password;
+
+    public AllAccounts() {
+    }
 
     public AllAccounts(String name, String email, String password) {
         this.name = name;

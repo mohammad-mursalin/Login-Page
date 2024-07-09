@@ -30,7 +30,7 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form action = "checkAccount.jsp" method = "post">
                 <h1>Sign In</h1>
 
                 <div class="social-icons">
@@ -40,8 +40,8 @@
                 <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email & password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input name = "email" type="email" placeholder="Email">
+                <input name = "password" type="password" placeholder="Password">
                 <a href="#">Forget Your Password?</a>
                 <button>Sign In</button>
             </form>
