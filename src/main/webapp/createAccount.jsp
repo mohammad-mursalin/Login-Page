@@ -20,7 +20,6 @@
         String password = request.getParameter("password");
 
         AllAccounts account = new AllAccounts(name, email, password);
-        out.println(name);
 
         try{
 
@@ -41,7 +40,11 @@
 
         }
     %>
-<h1> Create Account page</h1>
+<h1> Account creation successfull for <%= name %> </h1><br> <br>
+
+<form action="index.jsp" method="post">
+            <button type="submit">Go to home page</button>
+    </form>
 
 </body>
 </html>
