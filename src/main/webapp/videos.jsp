@@ -20,26 +20,16 @@
     </script>
 </head>
 <body>
-
     <%
         response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
         response.setHeader("Pragma","no-cache");
         response.setHeader("Expires","0");
-
-        String name = (String)session.getAttribute("name");
-
-        if(name==null) {
-
-            response.sendRedirect("index.jsp");
-        }
     %>
-    <h1> Sign in succesfull for <%= name %></h1>
 
-    <a href="videos.jsp">Go to Videos</a>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-BxbFPrwwtg?si=-bc_AT7tzUB6Owpa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     <form action="index.jsp" method="post">
-            <button type="submit">log out</button>
+        <button type="submit">log out</button>
     </form>
-
 </body>
 </html>

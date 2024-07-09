@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1><strong>Wrong password</strong></h1>
-    <form action="index.jsp" method="get">
+    <form action="index.jsp" method="post">
         <button type="submit">Try Again</button>
     </form>
 </body>
